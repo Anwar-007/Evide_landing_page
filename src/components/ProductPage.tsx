@@ -123,9 +123,9 @@ const ProductPage = ({
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex justify-end">
+            <div className="flex justify-center lg:justify-end mt-10 lg:mt-0">
               {heroIconPlain ? (
-                <div className="hero-art-stage w-fit h-[33rem] flex items-center justify-center">
+                <div className="hero-art-stage w-fit h-[28rem] sm:h-[32rem] lg:h-[33rem] flex items-center justify-center">
                   <div className="w-fit h-full">{heroIcon}</div>
                 </div>
               ) : (
