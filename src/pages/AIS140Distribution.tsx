@@ -1,12 +1,5 @@
 import ProductPage from "../components/ProductPage";
-
-const HeroIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full">
-    <rect x="5" y="7" width="14" height="10" rx="2" strokeWidth={1.5} />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 4v3m6-3v3M9 20v-3m6 3v-3" />
-    <circle cx="12" cy="12" r="2.5" strokeWidth={1.5} />
-  </svg>
-);
+import { BusFront } from "lucide-react";
 
 const highlights = [
   {
@@ -30,7 +23,13 @@ const highlights = [
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5a3 3 0 11-6 0 3 3 0 016 0zM18 9a7 7 0 11-14 0 7 7 0 0114 0zM9 9h6m-3 4v2m0 0v2m0-2h2m-2 0h-2" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M12.22 2h-.44a2 2 0 00-2 2v.18a2 2 0 01-1 1.73l-.43.25a2 2 0 01-2 0l-.15-.08a2 2 0 00-2.73.73l-.22.38a2 2 0 00.73 2.73l.15.1a2 2 0 011 1.72v.51a2 2 0 01-1 1.74l-.15.09a2 2 0 00-.73 2.73l.22.38a2 2 0 002.73.73l.15-.08a2 2 0 012 0l.43.25a2 2 0 011 1.73V20a2 2 0 002 2h.44a2 2 0 002-2v-.18a2 2 0 011-1.73l.43-.25a2 2 0 012 0l.15.08a2 2 0 002.73-.73l.22-.38a2 2 0 00-.73-2.73l-.15-.08a2 2 0 01-1-1.74v-.5a2 2 0 011-1.74l.15-.09a2 2 0 00.73-2.73l-.22-.38a2 2 0 00-2.73-.73l-.15.08a2 2 0 01-2 0l-.43-.25a2 2 0 01-1-1.73V4a2 2 0 00-2-2z"
+        />
+        <circle cx="12" cy="12" r="3" />
       </svg>
     ),
     label: "Professional Install",
@@ -85,11 +84,7 @@ const benefitGroups = [
     title: "For Fleet Operators",
     subtitle: "Compliant hardware, handled end-to-end",
     iconBg: "bg-linear-to-br from-evide-blue to-blue-600",
-    icon: (
-      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
+    icon: <BusFront className="w-7 h-7 text-white" strokeWidth={2} />,
     benefits: [
       {
         title: "Regulatory compliance",
@@ -145,7 +140,14 @@ const AIS140Distribution = () => {
         </>
       }
       description="Certified AIS-140 tracking devices for commercial and private fleets — sourced, installed, and supported by Evide."
-      heroIcon={<HeroIcon />}
+      heroIconFullSize
+      heroIcon={
+        <img
+          src="/AIS-140-gps-tracker.png"
+          alt="AIS-140 GPS tracker"
+          className="w-full h-full object-cover rounded-3xl"
+        />
+      }
       highlights={highlights}
       featuresEyebrow="Why Operators Choose Evide"
       featuresTitle={

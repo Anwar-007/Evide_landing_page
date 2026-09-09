@@ -40,7 +40,13 @@ const features = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M11 5a3 3 0 11-6 0 3 3 0 016 0zM18 9a7 7 0 11-14 0 7 7 0 0114 0zM9 9h6m-3 4v2m0 0v2m0-2h2m-2 0h-2"
+          d="M11 5 6 9H2v6h4l5 4V5z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"
         />
       </svg>
     ),

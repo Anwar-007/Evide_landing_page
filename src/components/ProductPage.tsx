@@ -19,6 +19,9 @@ export interface ProductBenefitGroup {
   subtitle: string;
   iconBg: string;
   icon: ReactNode;
+  image?: string;
+  imageAlt?: string;
+  imagePlain?: boolean;
   benefits: { title: string; description: string }[];
 }
 
@@ -32,6 +35,9 @@ interface ProductPageProps {
   title: ReactNode;
   description: string;
   heroIcon: ReactNode;
+  heroIconFullSize?: boolean;
+  heroIconPlain?: boolean;
+  showScrollIndicator?: boolean;
   highlights: ProductHighlight[];
   featuresEyebrow: string;
   featuresTitle: ReactNode;
@@ -79,6 +85,9 @@ const ProductPage = ({
   title,
   description,
   heroIcon,
+  heroIconFullSize = false,
+  heroIconPlain = false,
+  showScrollIndicator = false,
   highlights,
   featuresEyebrow,
   featuresTitle,
@@ -115,12 +124,36 @@ const ProductPage = ({
               </div>
             </div>
             <div className="hidden lg:flex justify-end">
-              <div className="w-64 h-64 rounded-3xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white">
-                <div className="w-28 h-28">{heroIcon}</div>
-              </div>
+              {heroIconPlain ? (
+                <div className="hero-art-stage w-fit h-[33rem] flex items-center justify-center">
+                  <div className="w-fit h-full">{heroIcon}</div>
+                </div>
+              ) : (
+                <div className="w-64 h-64 rounded-3xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white">
+                  <div className={heroIconFullSize ? "w-full h-full" : "w-28 h-28"}>{heroIcon}</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
+        {showScrollIndicator && (
+          <div className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a
+              href="#features"
+              className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors"
+            >
+              <span className="text-sm">Scroll to explore</span>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </a>
+          </div>
+        )}
       </section>
 
       {/* Highlights strip */}
@@ -156,7 +189,7 @@ const ProductPage = ({
       </div>
 
       {/* Features */}
-      <RevealSection className="py-16 lg:py-24 bg-linear-to-b from-white to-evide-light">
+      <RevealSection id="features" className="py-16 lg:py-24 bg-linear-to-b from-white to-evide-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
             <span className="inline-block px-4 py-2 bg-evide-blue/10 text-evide-blue font-semibold rounded-full text-sm mb-4">
@@ -200,6 +233,13 @@ const ProductPage = ({
                 key={gi}
                 className="reveal bg-white rounded-3xl p-8 border border-gray-100"
               >
+                {group.image && (
+                  <img
+                    src={group.image}
+                    alt={group.imageAlt ?? ""}
+                    className={`w-full h-64 object-contain mb-8 ${group.imagePlain ? "" : "rounded-2xl bg-evide-light"}`}
+                  />
+                )}
                 <div className="flex items-center gap-4 mb-8">
                   <div
                     className={`w-14 h-14 ${group.iconBg} rounded-2xl flex items-center justify-center`}

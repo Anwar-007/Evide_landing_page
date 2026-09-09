@@ -1,19 +1,5 @@
 import ProductPage from "../components/ProductPage";
 
-const HeroIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full">
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={1.5}
-      d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10z"
-    />
-    <circle cx="7.5" cy="15.5" r="1.5" fill="currentColor" stroke="none" />
-    <circle cx="16.5" cy="15.5" r="1.5" fill="currentColor" stroke="none" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 11h12V6H6v5z" />
-  </svg>
-);
-
 const highlights = [
   {
     icon: (
@@ -171,11 +157,20 @@ const SchoolBusTracking = () => {
       title={
         <>
           School bus tracking{" "}
-          <span className="text-yellow-300">parents can trust</span>
+          <span className="text-yellow-300">for safer journeys</span>
         </>
       }
       description="A dedicated tracking system built for school transport, so schools can offer real safety and parents always know where their child's bus is."
-      heroIcon={<HeroIcon />}
+      heroIcon={
+        <img
+          src="/schoolbusandparentpor.png"
+          alt="School bus with students"
+          className="hero-art-image w-auto h-full rounded-[3.5rem] overflow-hidden"
+        />
+      }
+      heroIconFullSize
+      heroIconPlain
+      showScrollIndicator
       highlights={highlights}
       featuresEyebrow="Why Schools Choose Evide"
       featuresTitle={

@@ -30,10 +30,9 @@ const Header = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/#about" },
-    { name: "School Buses", href: "/school-bus-tracking" },
+    { name: "Evide Bus Tracking App", href: "/evide-bus-tracking-app" },
     { name: "AIS-140", href: "/ais-140-distribution" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/evide-bus-tracking-app#contact" },
   ];
 
   return (

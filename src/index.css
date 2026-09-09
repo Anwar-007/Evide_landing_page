@@ -65,6 +65,16 @@ body {
   }
 }
 
+@keyframes hero-art-float {
+  0%,
+  100% {
+    transform: perspective(900px) translateY(0) rotateX(0deg) rotateY(-2deg);
+  }
+  50% {
+    transform: perspective(900px) translateY(-10px) rotateX(1deg) rotateY(2deg);
+  }
+}
+
 @keyframes bus-move {
   0% {
     transform: translateX(-100%);
@@ -102,6 +112,18 @@ body {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.hero-art-stage {
+  perspective: 900px;
+}
+
+.hero-art-image {
+  animation: hero-art-float 6s ease-in-out infinite;
+  clip-path: inset(0 round 1.5rem);
+  filter: drop-shadow(0 22px 18px rgba(8, 31, 76, 0.28));
+  transform-origin: center;
+  will-change: transform;
 }
 
 .animate-gradient {
